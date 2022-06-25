@@ -1,32 +1,49 @@
 <template>
-  <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view/>
+  <div id="app" class="container">
+    <completarTarea />
+    <obtenerTareas />
+    <tareaActual />
   </div>
 </template>
 
+<script>
+import obtenerTareas from './components/obtenerTareas.vue'
+import tareaActual from './components/tareaActual.vue'
+import completarTarea from './components/completarTarea.vue'
+export default {
+  components: {
+    obtenerTareas,
+    tareaActual,
+    completarTarea
+  }
+
+}
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+body {
+  background-color: #fff;
+  font-family: Helvetica, sans-serif;
+}
+
+input {
+  width: 50%;
   text-align: center;
-  color: #2c3e50;
+  height: 40px;
+  border-radius: 10px;
+  align-items: center;
+
+
 }
 
-nav {
-  padding: 30px;
+button {
+  height: 40px;
+
 }
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+h3 {
+  text-align: center;
+  color: aquamarine;
 
-nav a.router-link-exact-active {
-  color: #42b983;
 }
 </style>
